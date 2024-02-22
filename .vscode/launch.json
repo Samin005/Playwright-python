@@ -11,13 +11,13 @@
             "command": "pytest --headed"
         },
         {
-            "name": "Pytest Headed Specifiic App",
+            "name": "Pytest Current App Headed",
             "type": "node-terminal",
             "request": "launch",
-            "command": "pytest Tic-Tac-Toe-AI/ --headed"
+            "command": "pytest ${relativeFileDirname}/ --headed"
         },
         {
-            "name": "Pytest Headed Specifiic Test",
+            "name": "Pytest Current Test Headed",
             "type": "node-terminal",
             "request": "launch",
             "command": "pytest ${file} --headed"
