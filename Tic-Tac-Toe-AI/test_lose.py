@@ -24,7 +24,3 @@ def test_lose(playwright: Playwright) -> None:
     # ---------------------
     context.close()
     browser.close()
-
-
-with sync_playwright() as playwright:
-    test_lose(playwright)

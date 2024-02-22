@@ -27,7 +27,3 @@ def test_tie(playwright: Playwright) -> None:
     # ---------------------
     context.close()
     browser.close()
-
-
-with sync_playwright() as playwright:
-    test_tie(playwright)
