@@ -1,0 +1,32 @@
+from playwright.sync_api import Page, expect
+
+
+def test_page_load_and_navigation(page: Page) -> None:
+    page.goto("https://samin005.github.io/About-Me/")
+    expect(page.get_by_role("link", name=" Samin Azhan")).to_be_visible()
+    expect(page.get_by_role("img", name="Samin Azhan")).to_be_visible()
+    page.locator("a").filter(has_text="Education").click()
+    expect(page.get_by_role("heading", name="Education:")).to_be_visible()
+    expect(page.locator("#education")).to_contain_text("Education:")
+    page.locator("a").filter(has_text="Skills").click()
+    expect(page.get_by_role("heading", name="Skills:")).to_be_visible()
+    expect(page.locator("#skills")).to_contain_text("Skills:")
+    page.locator("a").filter(has_text="Work Experience").click()
+    expect(page.get_by_role("heading", name="Work Experience:")).to_be_visible()
+    expect(page.locator("#work-experience")).to_contain_text("Work Experience:")
+    page.locator("a").filter(has_text="Major Projects").click()
+    expect(page.get_by_role("heading", name="Major Projects:")).to_be_visible()
+    expect(page.locator("#major-projects")).to_contain_text("Major Projects:")
+    page.locator("a").filter(has_text="Awards & Participation").click()
+    expect(page.get_by_role("heading", name="Awards & Participation:")).to_be_visible()
+    expect(page.locator("#awards")).to_contain_text("Awards & Participation:")
+    page.locator("a").filter(has_text="Certifications").click()
+    expect(page.get_by_role("heading", name="Certifications:")).to_be_visible()
+    expect(page.locator("#certifications")).to_contain_text("Certifications:")
+    page.locator("a").filter(has_text="Publications").click()
+    expect(page.get_by_role("heading", name="Publications:")).to_be_visible()
+    expect(page.locator("#publications")).to_contain_text("Publications:")
+    page.locator("a").filter(has_text="References").click()
+    expect(page.get_by_role("heading", name="References:")).to_be_visible()
+    expect(page.locator("#references")).to_contain_text("References:")
+
