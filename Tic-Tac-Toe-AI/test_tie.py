@@ -3,7 +3,7 @@ from playwright.sync_api import Page, expect
 
 def test_tie(page: Page):
     page.goto("https://samin005.github.io/Tic-Tac-Toe-AI/")
-    expect(page.locator("#typedText")).to_contain_text("Mode Details: You will play against an AI that uses the Minimax Alpha Beta Pruning Algorithm to make the best move possible. You won't win, the best thing you can do is a tie!")
+    expect(page.get_by_label("Hard  Easy  2 Players")).to_have_value("0")
     page.get_by_role("button", name="Start Game!").click()
     expect(page.locator("app-game")).to_contain_text("The AI lets you go first out of pity.")
     page.locator("[id=\"\\30 \"]").click()
